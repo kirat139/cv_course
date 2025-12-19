@@ -29,14 +29,32 @@ while True:
     results = hands.process(rgb_frame)
     # print(results)
 
-    # If hands detected, draw landmarks
+    # # If hands detected, draw landmarks
+    # if results.multi_hand_landmarks:
+    #     for hand_landmarks in results.multi_hand_landmarks:
+    #         mp_drawing.draw_landmarks(
+    #             frame,
+    #             hand_landmarks,
+    #             mp_hands.HAND_CONNECTIONS
+    #         )
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
+            # Example: index fingertip is landmark 8
+            index_tip = hand_landmarks.landmark[8]
+            print(index_tip)
+
+            h, w, c = frame.shape
+            cx, cy = int(index_tip.x * w), int(index_tip.y * h)
+
+            # Draw a bigger circle at index fingertip
+            cv2.circle(frame, (cx, cy), 10, (0, 0, 255), -1)
+
             mp_drawing.draw_landmarks(
                 frame,
                 hand_landmarks,
                 mp_hands.HAND_CONNECTIONS
             )
+
 
     cv2.imshow("MediaPipe Hands", frame)
 
