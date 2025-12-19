@@ -88,7 +88,7 @@ def main():
             (20, 40),
             cv2.FONT_HERSHEY_SIMPLEX,
             0.8,
-            (255, 255, 255),
+            (0, 255, 255),
             2,
             cv2.LINE_AA,
         )
