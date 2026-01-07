@@ -40,14 +40,17 @@ while True:
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
             # Example: index fingertip is landmark 8
-            index_tip = hand_landmarks.landmark[8]
-            print(index_tip)
+            thumb_tip = hand_landmarks.landmark[4]
+            thumb_ip = hand_landmarks.landmark[3]
+            # print(thumb_tip)
 
             h, w, c = frame.shape
-            cx, cy = int(index_tip.x * w), int(index_tip.y * h)
+            ttx, tty = int(thumb_tip.x * w), int(thumb_tip.y * h)
+            tix, tiy = int(thumb_ip.x * w), int(thumb_ip.y * h)
 
             # Draw a bigger circle at index fingertip
-            cv2.circle(frame, (cx, cy), 10, (0, 0, 255), -1)
+            cv2.circle(frame, (ttx, tty), 10, (0, 0, 255), -1)
+            cv2.circle(frame, (tix, tiy), 10, (0, 255, 0), -1)
 
             mp_drawing.draw_landmarks(
                 frame,
