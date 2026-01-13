@@ -11,7 +11,6 @@ def overlay_canvas_on_frame(frame_bgr, canvas):
     """
     return cv2.addWeighted(frame_bgr, 0.5, canvas, 1.0, 0.0)
 
-
 def norm_conv(x, y, w, h):
     return int(x * w), int(y * h)
 

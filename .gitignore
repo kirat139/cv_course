@@ -207,3 +207,4 @@ marimo/_lsp/
 __marimo__/
 
 virtual_painter_try.py
+arduino_codes/led_test/led_test.ino
