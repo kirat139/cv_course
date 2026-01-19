@@ -207,4 +207,14 @@ marimo/_lsp/
 __marimo__/
 
 virtual_painter_try.py
+python_serial_check.py
+sample.py
+serial_conn_sen_read.py
+
+
 arduino_codes/led_test/led_test.ino
+arduino_codes/pyserial_test_esp32/pyserial_test_esp32.ino
+arduino_codes/pyserial_test_esp32_dev_board/pyserial_test_esp32_dev_board.ino
+arduino_codes/test_cmd/test_cmd.ino
+arduino_codes/test_atharv/test_atharv.ino
+arduino_codes/serial_read_keyboard/serial_read_keyboard.ino
