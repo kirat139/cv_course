@@ -4,9 +4,7 @@ import serial
 import numpy as np
 from cvzone.HandTrackingModule import HandDetector
 
-# -----------------------------
-# SETTINGS (student will edit)
-# -----------------------------
+
 PORT = "COM3"      # change if needed
 BAUD = 9600
 COOLDOWN_SEC = 0.02  # debounce (prevents spamming commands)
